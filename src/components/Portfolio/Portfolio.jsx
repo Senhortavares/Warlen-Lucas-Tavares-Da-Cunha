@@ -12,7 +12,7 @@ import INFRAN from '../../assets/infran.png'
 import PT01 from '../../assets/pt01.png'
 import SENATUS from '../../assets/senatus.png'
 
-const WHATSAPP_LINK = 'https://wa.me/+5561996941014'
+const WHATSAPP_LINK = 'https://wa.me/5561996941014'
 const INSTAGRAM_LINK = 'https://www.instagram.com/wtaaaa_1/'
 
 const Portfolio = () => {
@@ -22,52 +22,47 @@ const Portfolio = () => {
       image: BLOKV,
       title: 'Sistema de Vendas (Blok-Z)',
       description:
-        'Alguns dos meus sites ainda não estão hospedados para acesso público, pois só serão lançados quando estiverem totalmente finalizados.',
+        'Alguns dos meus sistemas ainda não estão públicos. Eles só serão liberados quando estiverem totalmente finalizados.',
       github: 'https://github.com/Senhortavares',
-      projeto: '#',
     },
     {
       id: 2,
       image: BLOKZ,
       title: 'Blok-Z',
       description:
-        'Criei o Blok-Z para jogar com amigos. Hoje, deixamos de usar o grupo do WhatsApp e passamos a nos conectar apenas pelo Discord.',
+        'Projeto criado para comunidade. Evoluímos de grupo WhatsApp para integração com Discord.',
       github: 'https://github.com/Senhortavares',
       projeto: 'https://blok-z.vercel.app/',
     },
     {
       id: 3,
       image: WTPORT,
-      title: 'Site Portfólio',
+      title: 'Site Principal (Portfólio)',
       description:
-        'Este é o meu portfólio profissional, utilizado também no meu Instagram oficial para divulgação de trabalhos.',
-      github: 'https://github.com/Senhortavares',
+        'Este é meu site principal, usado para apresentar meus serviços profissionais.',
       projeto: 'https://wtport.vercel.app/',
+      destaque: true,
     },
     {
       id: 4,
       image: BLOKB,
-      title: 'Bot para Discord',
-      description: 'Bot com sistema de controle e automação para servidores.',
+      title: 'Bot Discord',
+      description: 'Bot com automação e controle para servidores.',
       github: 'https://github.com/Senhortavares',
-      projeto: 'https://github.com/Senhortavares/botBlokz-b',
     },
     {
       id: 5,
       image: PGO,
-      title: 'Sistema de Bater Ponto',
+      title: 'Sistema de Ponto',
       description:
-        'Estou desenvolvendo um sistema para gerenciar o bater ponto dos funcionários.',
-      github: 'https://github.com/Senhortavares',
+        'Sistema em desenvolvimento para controle de funcionários.',
       projeto: 'https://ponto-go-prototipo.vercel.app/',
     },
-        {
+    {
       id: 6,
       image: PT01,
-      title: 'Portfólio',
-      description:
-        'Este é um projeto acadêmico/experimental que desenvolvi como parte dos meus estudos.',
-      github: 'https://github.com/Senhortavares',
+      title: 'Portfólio (Estudos)',
+      description: 'Projeto experimental usado para aprendizado.',
       projeto: 'https://portfolio-ten-sigma-57.vercel.app/',
     },
     {
@@ -75,38 +70,65 @@ const Portfolio = () => {
       image: SENATUS,
       title: 'Senatus',
       description:
-        'O Senatus foi desenvolvido para nossa comunidade, criada após mudanças importantes no conselho. O site serve como ponto de acesso para novos membros conhecerem nossas regras, diretrizes e informações essenciais.',
-      github: 'https://github.com/Senhortavares',
+        'Sistema criado para organização de comunidade e onboarding de membros.',
       projeto: 'https://senatus-vite.vercel.app/',
     },
     {
       id: 8,
       image: INFRA,
-      title: 'Configuração de Redes',
-      description:
-        'Projetos de redes e infraestrutura básica.',
+      title: 'Redes',
+      description: 'Configuração e suporte de redes.',
       whatsapp: WHATSAPP_LINK,
-      instagram: INSTAGRAM_LINK,
     },
     {
       id: 9,
       image: INFRAN,
-      title: 'Manutenção de Notebooks',
-      description:
-        'Formatação, instalação de sistemas, otimização, configuração de programas e suporte básico para notebooks.',
+      title: 'Manutenção',
+      description: 'Formatação, instalação e suporte técnico.',
       whatsapp: WHATSAPP_LINK,
-      instagram: INSTAGRAM_LINK,
     },
   ]
 
   return (
     <section id="portfolio">
-      <h5>Meus Trabalhos</h5>
+      <h5>Projetos e Trabalhos</h5>
       <h2>Portfólio</h2>
+
+      <p className="portfolio__top-info">
+        Aqui estão alguns dos meus projetos. Nem todos estão disponíveis publicamente.
+        Para ver minha apresentação completa de serviços, acesse o site principal.
+      </p>
+
+      <div className="portfolio__main-link">
+        <a
+          href="https://wtport.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn-primary"
+        >
+          Ir para site principal
+        </a>
+      </div>
 
       <div className="container portfolio__container">
         {data.map((item) => (
-          <article key={item.id} className="portfolio__item">
+<article
+  key={item.id}
+  className={`portfolio__item ${item.destaque ? 'portfolio__highlight' : ''}`}
+  onClick={(e) => {
+    const card = e.currentTarget
+
+    card.classList.remove('scan-active')
+
+    setTimeout(() => {
+      card.classList.add('scan-active')
+    }, 10)
+
+    setTimeout(() => {
+      card.classList.remove('scan-active')
+    }, 1300)
+  }}
+>
             <div className="portfolio__item-image">
               <img src={item.image} alt={item.title} />
             </div>
@@ -117,46 +139,20 @@ const Portfolio = () => {
 
             <div className="portfolio__item-cta">
               {item.github && (
-                <a
-                  href={item.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn"
-                >
+                <a href={item.github} target="_blank" rel="noreferrer" className="btn">
                   GitHub
                 </a>
               )}
 
-              {item.projeto && item.projeto !== '#' && (
-                <a
-                  href={item.projeto}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary"
-                >
+              {item.projeto && (
+                <a href={item.projeto} target="_blank" rel="noreferrer" className="btn btn-primary">
                   Ver Projeto
                 </a>
               )}
 
               {item.whatsapp && (
-                <a
-                  href={item.whatsapp}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-w"
-                >
+                <a href={item.whatsapp} target="_blank" rel="noreferrer" className="btn-w">
                   WhatsApp
-                </a>
-              )}
-
-              {item.instagram && (
-                <a
-                  href={item.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-i"
-                >
-                  Instagram
                 </a>
               )}
             </div>

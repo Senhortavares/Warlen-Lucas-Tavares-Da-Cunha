@@ -49,19 +49,15 @@ const About = () => {
           </div>
 
           <p>
-            Sou apaixonado por tecnologia e desenvolvimento web. 
-            Tenho experiência com HTML, CSS, JavaScript, React e TypeScript,
-            além de conhecimentos em suporte técnico, redes e implantação de sistemas.
+            Meu nome é Warlen e atualmente trabalho na Cox. Antes disso, tive a oportunidade de atuar na Planova, onde participei da implantação de um sistema para o TOTVS. Foi lá que iniciei minha experiência na área de Tecnologia da Informação, trabalhando diretamente com a equipe de T.I da empresa, o que me proporcionou um aprendizado valioso e uma base sólida para minha carreira.
           </p>
 
           <p>
-            Já atuei com sistemas como TOTVS e continuo evoluindo constantemente,
-            buscando criar soluções modernas, eficientes e bem estruturadas.
+            Sou muito grato a todos que contribuíram para meu desenvolvimento profissional. Desde então, mantenho o compromisso de buscar constantemente novos conhecimentos. Na Cox, já adquiri experiência prática em áreas como redes e infraestrutura, ampliando ainda mais minhas competências técnicas.
           </p>
 
           <p>
-            Meu objetivo é crescer profissionalmente, participar de projetos reais
-            e contribuir com empresas através da tecnologia.
+            Estou sempre aberto a desafios e disposto a demonstrar minhas habilidades. Caso tenha interesse, terei prazer em apresentar em detalhes meus conhecimentos e experiências profissionais.
           </p>
 
           <a href="#contato" className="btn btn-primary">
