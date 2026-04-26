@@ -1,25 +1,43 @@
-import React         from         'react'
-import                    './Header.css'
-import CTA           from         './CTA'
-import ME            from         '../../assets/warlen.png.jpeg'
+import React from 'react'
+import './Header.css'
+
+import CTA from './CTA'
 import HeaderSocials from './HeaderSocials'
-const header = () => {
+import ME from '../../assets/warlen.png.jpeg'
+
+const Header = () => {
   return (
-    <header>
-      <div className="conteiner header__conteiner">
-            <h5>Olá.<br/> Eu sou</h5>
-            <h1>Warlen Tavares!</h1>
-            <h5 className="text-light" >Desenvolvedor FrontEnd.</h5>
-               <CTA/>
-               <HeaderSocials/>
-        <div className="me">
-          <img id='wt' src={ME} alt="Warlen.png-[ERRO!]"  />
+    <header id="home">
+      <div className="container header__container">
+        <div className="header__content">
+          <span className="header__badge">Olá, eu sou</span>
+
+          <h1>Warlen Tavares</h1>
+
+          <h5 className="text-light">
+            Desenvolvedor Front-End | Tecnologia | Suporte | Projetos Digitais
+          </h5>
+
+          <p className="header__description">
+            Crio interfaces modernas, sites responsivos e soluções digitais com foco em tecnologia,
+            organização e experiência do usuário.
+          </p>
+
+          <CTA />
         </div>
 
-            <a href="#footer" className='scrll__down'>Role para baixo. </a>
+        <div className="me">
+          <img src={ME} alt="Foto de Warlen Tavares" />
+        </div>
+
+        <HeaderSocials />
+
+        <a href="#contato" className="scroll__down">
+          Fale comigo
+        </a>
       </div>
     </header>
   )
 }
 
-export default header
+export default Header

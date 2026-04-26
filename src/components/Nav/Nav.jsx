@@ -1,23 +1,57 @@
-import  React                from 'react'
-import                            './Nav.css'
-import {AiFillHome}          from 'react-icons/ai'
-import {BiSolidUser}         from 'react-icons/bi'
-import {AiOutlineBook}       from 'react-icons/ai'
-import {MdHomeRepairService} from 'react-icons/md'
-import {MdOutlineContacts} from 'react-icons/md'
+import React, { useState } from 'react'
+import './Nav.css'
 
+import { AiFillHome } from 'react-icons/ai'
+import { BiSolidUser } from 'react-icons/bi'
+import { AiOutlineBook } from 'react-icons/ai'
+import { MdHomeRepairService, MdOutlineContacts } from 'react-icons/md'
 
-const nav = () => {
-  
+const Nav = () => {
+  const [activeNav, setActiveNav] = useState('#')
+
   return (
-    <nav>
-      <a href="#" ><AiFillHome/></a>
-      <a href="#about" ><BiSolidUser/></a>
-      <a href="#experiencia"><AiOutlineBook/></a>
-      <a href="#serviços"><MdHomeRepairService/></a>
-      <a href="#contato"><MdOutlineContacts/></a>
+    <nav className="nav">
+      <a 
+        href="#" 
+        onClick={() => setActiveNav('#')} 
+        className={activeNav === '#' ? 'active' : ''}
+      >
+        <AiFillHome />
+      </a>
+
+      <a 
+        href="#about" 
+        onClick={() => setActiveNav('#about')} 
+        className={activeNav === '#about' ? 'active' : ''}
+      >
+        <BiSolidUser />
+      </a>
+
+      <a 
+        href="#experiencia" 
+        onClick={() => setActiveNav('#experiencia')} 
+        className={activeNav === '#experiencia' ? 'active' : ''}
+      >
+        <AiOutlineBook />
+      </a>
+
+      <a 
+        href="#servicos" 
+        onClick={() => setActiveNav('#servicos')} 
+        className={activeNav === '#servicos' ? 'active' : ''}
+      >
+        <MdHomeRepairService />
+      </a>
+
+      <a 
+        href="#contato" 
+        onClick={() => setActiveNav('#contato')} 
+        className={activeNav === '#contato' ? 'active' : ''}
+      >
+        <MdOutlineContacts />
+      </a>
     </nav>
   )
 }
 
-export default nav
+export default Nav

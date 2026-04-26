@@ -1,76 +1,116 @@
-.container .contato__container{
-    width: 58%;
+.contato__container {
+    width: 70%;
     display: grid;
-    grid-template-columns: 30% 58%;
-    gap: 12%;
+    grid-template-columns: 35% 1fr;
+    gap: 3rem;
 }
 
-.contato__options{
+.contato__options {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
-.contato__options{
-    background: var(--color-bg-variant);
-    padding: 1.2rem;
+
+.contato__option {
+    padding: 1.3rem;
     border-radius: 1.2rem;
     text-align: center;
-    border: 2px solid var(--color-nova-v);
+
+    background: rgba(19, 19, 26, 0.75);
+    border: 1px solid rgba(0, 234, 255, 0.18);
+    backdrop-filter: blur(14px);
+
     transition: var(--transition);
 }
-.contato__options:hover{
-    background: transparent;
-    border-color: var(--color-nova-v);
+
+.contato__option:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
 }
 
-.contato__option-icon{
-    font-size: 1.5rem;
-    margin-bottom: 0,5rem;
-    
-}
-.contato__option a{
-   margin-top: 0.7rem;
-   display: inline-block;
-   font-size: 0.8rem;
+.contato__option-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
 }
 
-
-
-/* parte do formulario */
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    border-top: 23px;
-}
-input, textarea{
-    width: 100%;
-    padding: 1.5rem;
-    border-radius: 1.6rem;
-    background:  transparent;
-    border: 1px solid var(--color-nova-v);
-    resize: none;
+.contato__option h4 {
     color: var(--color-white);
 }
 
-
-
-
-
-/* parte das midias para tablet */
-@media screen and (max-width: 1024px){
-    .container .contato__container{
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
+.contato__option h5 {
+    color: var(--color-light);
+    font-size: 0.75rem;
+    margin: 0.4rem 0;
 }
 
+.contato__option a {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
 
-/* parte das midias para celular */
-@media screen and (max-width: 600px){
-    .container .contato__container{
-        width: var(--conteiner_width-sm);
+/* FORMULÁRIO */
+.contato__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contato__form input,
+.contato__form textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 234, 255, 0.2);
+    color: var(--color-white);
+    resize: none;
+
+    font-family: inherit;
+}
+
+.contato__form input::placeholder,
+.contato__form textarea::placeholder {
+    color: var(--color-light);
+}
+
+.contato__form input:focus,
+.contato__form textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 14px rgba(0, 234, 255, 0.22);
+}
+
+.contato__form button {
+    width: max-content;
+}
+
+/* TABLET */
+@media screen and (max-width: 1024px) {
+    .contato__container {
+        width: var(--container-width-md);
+        grid-template-columns: 1fr;
     }
 
+    .contato__options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* CELULAR */
+@media screen and (max-width: 700px) {
+    .contato__container {
+        width: var(--container-width-sm);
+    }
+
+    .contato__options {
+        grid-template-columns: 1fr;
+    }
+
+    .contato__form button {
+        margin: 0 auto;
+    }
 }

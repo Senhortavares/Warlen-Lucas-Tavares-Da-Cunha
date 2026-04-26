@@ -1,95 +1,97 @@
-/* .experiencia01{
-    margin-top: 400px;
-} */
-
-
-.experiencia__container{
-   display: grid; 
-   grid-template-columns: 1fr 1fr;
-   gap: 2rem;
+.experiencia__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
-.experiencia__container > div{
-    background: var(--color-bg-variant);
-    padding: 1.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid rgb(0, 255, 13);
+
+.experiencia__box {
+    padding: 2rem;
+    border-radius: 1.5rem;
+
+    background: rgba(19, 19, 26, 0.75);
+    border: 1px solid rgba(0, 234, 255, 0.18);
+    backdrop-filter: blur(14px);
+
     transition: var(--transition);
 }
-.experiencia__container > div:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
 
+.experiencia__box:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.22);
 }
 
-.experiencia__container > div h3{
+.experiencia__box h3 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--color-primary)
-}
-
-
-.experience__content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-}
-
-.experience__details{
-    display: flex;
-    gap: 1rem;
-}
-
-/* icons que eu ja tenho habilidade, eles estao verdes */
-.experience__details-icon{
-    margin-top: 6px;
     color: var(--color-primary);
-
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
 }
 
-/*icons que eu estou estudando, eles esao amarelos*/
-.experience__details-iconAT{
-    margin-top: 6px;
-    color: rgb(255, 238, 0);
-    
-}
-/*icons que eu nao tenho conhecimento, eles esao vermelhos*/
-.experience__details-iconN{
-    margin-top: 6px;
-    color: red;
-    
+.experiencia__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
 }
 
+.experiencia__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
 
+    padding: 0.85rem;
+    border-radius: 1rem;
 
+    background: rgba(255, 255, 255, 0.03);
+    transition: var(--transition);
+}
 
-/* parte das midias para tablet */
-@media screen and (max-width: 1024px){
-   
-    .experiencia__container{
-       grid-template-columns: 1fr; 
+.experiencia__item:hover {
+    background: rgba(0, 234, 255, 0.08);
+    transform: translateX(6px);
+}
+
+.experiencia__item h4 {
+    font-size: 0.95rem;
+    color: var(--color-white);
+}
+
+.experiencia__item small {
+    color: var(--color-light);
+    font-size: 0.75rem;
+}
+
+.icon {
+    margin-top: 0.25rem;
+    font-size: 1.2rem;
+}
+
+.icon.ok {
+    color: var(--color-green);
+}
+
+.icon.estudando {
+    color: #ffe600;
+}
+
+.icon.pendente {
+    color: #ff3b3b;
+}
+
+/* TABLET */
+@media screen and (max-width: 1024px) {
+    .experiencia__container {
+        grid-template-columns: 1fr 1fr;
     }
-    .experiencia__container > div{
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-    .experience__content{
-        padding: 1rem;
-    }
-
-
 }
 
+/* CELULAR */
+@media screen and (max-width: 700px) {
+    .experiencia__container {
+        grid-template-columns: 1fr;
+    }
 
-/* parte das midias para celular */
-@media screen and (max-width: 600px){
-    
-    .experiencia__container{
-        gap: 1rem;
-     }
-     .experiencia__container > div{
-        width: 100%;
-        padding: 2rem 1rem;
-     }
+    .experiencia__box {
+        padding: 1.5rem;
+    }
 }

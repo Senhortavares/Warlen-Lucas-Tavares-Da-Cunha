@@ -1,108 +1,137 @@
-.about__container{
+.about__container {
     display: grid;
-    grid-template-columns: 35% 50%;
-    gap: 15%;
-}
-.about__me{
-    width: 333px;
-    aspect-ratio: 1/1;
-    border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
-    display: grid;
-    place-items: center;
-}
-.about__me-image{
-    width: 223px;
-    border-radius: 2rem;
-    overflow: hidden;
-    transform: rotate(10deg);
-}
-.about__me-image:hover{
-    transform: rotate(0);
+    grid-template-columns: 35% 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.about__cards{
-    /* display: grid; */
+.about__me {
+    width: 100%;
+    max-width: 330px;
+    aspect-ratio: 1 / 1;
+    border-radius: 2rem;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 234, 255, 0.25),
+        rgba(155, 0, 255, 0.25)
+    );
+
+    border: 1px solid rgba(0, 234, 255, 0.25);
+    box-shadow: 0 0 30px rgba(0, 234, 255, 0.18);
+}
+
+.about__me-image {
+    width: 82%;
+    height: 82%;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(8deg);
+    transition: var(--transition);
+}
+
+.about__me-image:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.about__me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__cards {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
-.about__cards{
-    margin-top: 1rem;
-    background: var(--color-bg-variant);
-    border: 1px solid transparent;
-    border-radius: 1rem;
-    padding: 2rem;
+
+.about__card {
+    min-height: 150px;
+    padding: 1.4rem 1rem;
+    border-radius: 1.2rem;
     text-align: center;
+
+    background: rgba(19, 19, 26, 0.72);
+    border: 1px solid rgba(0, 234, 255, 0.18);
+    backdrop-filter: blur(14px);
+
+    transition: var(--transition);
 }
-.about__cards:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+
+.about__card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 22px rgba(0, 234, 255, 0.22);
 }
-.about__icon{
+
+.about__icon {
     color: var(--color-primary);
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
 }
-.about__cards h5{
+
+.about__card h5 {
+    color: var(--color-white);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.about__card small {
+    color: var(--color-light);
+    font-size: 0.72rem;
+}
+
+.about__content p {
+    margin-bottom: 1rem;
+    color: var(--color-light);
     font-size: 0.95rem;
 }
 
-.about__cards small{
-    font-size: 0.7rem;
-    color: var(--color-light);
+.about__content .btn {
+    margin-top: 1rem;
 }
 
-.about__content p{
-    margin: 2rem 0 2.6rem;
-    color: var(--color-light);
-}
-
-/* parte das midias para tablet */
-@media screen and (max-width: 1024px){
-    .about__container{
+/* TABLET */
+@media screen and (max-width: 1024px) {
+    .about__container {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 3rem;
+    }
 
+    .about__content {
+        text-align: center;
     }
-    .about__me{
-        width: 40%;
-        margin: 2rem auto 4rem;
-    }
-    .about__content p{
-        margin: 1rem 0 1.5rem;
-    }
-    .about__me-image{
-        width: 223px;
-        border-radius: 2rem;
-        overflow: hidden;
-        transform: rotate(10deg);
+
+    .about__cards {
+        max-width: 760px;
+        margin: 0 auto 2rem;
     }
 }
 
-
-/* parte das midias para celular */
-@media screen and (max-width: 600px){
-     .about__me{
-        width: 65%;
-        margin: 0 auto 3rem;
-     }
-     .about__cards{
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-     }
-
-     .about__content{
-        text-align: center;
-     }
-     .about__content p{
-        margin: 1.5rem 0;
-     }
-     .about__me-image{
-        width: 190px;
-        border-radius: 2rem;
-        overflow: hidden;
-        transform: rotate(10deg);
+/* CELULAR */
+@media screen and (max-width: 600px) {
+    .about__container {
+        gap: 2rem;
     }
 
+    .about__me {
+        max-width: 250px;
+    }
+
+    .about__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about__card {
+        min-height: auto;
+    }
+
+    .about__content p {
+        font-size: 0.9rem;
+    }
 }

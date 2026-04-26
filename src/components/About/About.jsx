@@ -1,60 +1,77 @@
-import React             from 'react'
-import                        './About.css'
-import ME                from '../../assets/PicsArt_09.jpg'
-import {FaAward}         from 'react-icons/fa'
-import {FaUserAstronaut} from 'react-icons/fa'
-import {VscProject}      from 'react-icons/vsc'
+import React from 'react'
+import './About.css'
 
-const about = () => {
+import ME from '../../assets/PicsArt_09.jpg'
+import { FaAward, FaUserAstronaut } from 'react-icons/fa'
+import { VscProject } from 'react-icons/vsc'
+
+const About = () => {
   return (
-    <section id='about'>
+    <section id="about">
       <h5>Conheça</h5>
-      <h2>sobre mim.</h2>
+      <h2>Sobre mim</h2>
 
-      <div className="conteiner about__container">
+      <div className="container about__container">
+
         <div className="about__me">
-           <div className="about__me-image">
-            <img src={ME} alt="warlen.png-[ERRO! IMG-NÃO-SUPORTADA!]"/>
-           </div> {/*<div className="about__me-image">*/}
-        </div>  {/*<div className="about__me"> */}
+          <div className="about__me-image">
+            <img src={ME} alt="Warlen Tavares" />
+          </div>
+        </div>
 
         <div className="about__content">
-           <div className="about__cards01">
 
-              <article className="about__cards">
-                <FaAward className='about__icon'/>
-                    <h5>Experiência</h5>
-                    <small>1 ano e 2 meses especializando.</small>
-              </article>
+          <div className="about__cards">
 
-              <article className="about__cards">
-                <FaUserAstronaut className='about__icon'/>
-                    <h5>Habilidade.</h5>
-                    <small>HTML, CSS, JS, REACT.</small>
-              </article>
+            <article className="about__card">
+              <FaAward className="about__icon" />
+              <h5>Experiência</h5>
+              <small>+1 ano na área de tecnologia</small>
+            </article>
 
-              <a href="https://github.com/Senhortavares" target='back'><article className="about__cards">
-                <VscProject className='about__icon'/>
-                    <h5>Projetos</h5>
-                    <small>Estou desenvolvendo.</small>
-              </article></a>
-           </div>
+            <article className="about__card">
+              <FaUserAstronaut className="about__icon" />
+              <h5>Habilidades</h5>
+              <small>HTML, CSS, JS, React, TypeScript</small>
+            </article>
 
-           <p>
-              Tecnologia sempre foi minha paixão. 
-            Atualmente estou me especializando <br/> na área, mas já possuo
-            algumas habilidades em HTML, CSS, JS, REACT. <br/> 
-            A cada dia, mais e mais, estou  em busca de novos conhecimentos
-            na  área de  tecnologia<br/> e também em busca de novos projetos. <br/>
-            Assim, ficaria honrado  em mostrar para o (a) senhor (a), 
-            meus conhecimentos e habilidades,<br/> que podem ser aplicados a sua empresa.
-           </p>
+            <a 
+              href="https://github.com/Senhortavares" 
+              target="_blank" 
+              rel="noreferrer"
+              className="about__card"
+            >
+              <VscProject className="about__icon" />
+              <h5>Projetos</h5>
+              <small>Veja meus projetos</small>
+            </a>
 
-           <a href="#contato" className='btn btn-primary'>Conecte comigo.</a>
+          </div>
+
+          <p>
+            Sou apaixonado por tecnologia e desenvolvimento web. 
+            Tenho experiência com HTML, CSS, JavaScript, React e TypeScript,
+            além de conhecimentos em suporte técnico, redes e implantação de sistemas.
+          </p>
+
+          <p>
+            Já atuei com sistemas como TOTVS e continuo evoluindo constantemente,
+            buscando criar soluções modernas, eficientes e bem estruturadas.
+          </p>
+
+          <p>
+            Meu objetivo é crescer profissionalmente, participar de projetos reais
+            e contribuir com empresas através da tecnologia.
+          </p>
+
+          <a href="#contato" className="btn btn-primary">
+            Fale comigo
+          </a>
+
         </div>
-      </div>{/*<div className="conteiner about__container">*/}
+      </div>
     </section>
   )
 }
 
-export default about
+export default About
