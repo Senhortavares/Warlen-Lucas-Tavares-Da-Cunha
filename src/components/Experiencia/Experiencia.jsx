@@ -1,9 +1,7 @@
-import React from 'react'
+
 import './Experiencia.css'
 
 import { HiBadgeCheck } from 'react-icons/hi'
-import { VscError } from 'react-icons/vsc'
-import { GiStopwatch } from 'react-icons/gi'
 
 const Experiencia = () => {
   return (

@@ -1,7 +1,6 @@
 import React from 'react'
 import './Portfolio.css'
 
-import IMG1 from '../../assets/GitHub-2.png'
 import WTPORT from '../../assets/wtport..png'
 import BLOKZ from '../../assets/blokz.png'
 import BLOKB from '../../assets/blokb.png'
@@ -13,7 +12,6 @@ import PT01 from '../../assets/pt01.png'
 import SENATUS from '../../assets/senatus.png'
 
 const WHATSAPP_LINK = 'https://wa.me/5561996941014'
-const INSTAGRAM_LINK = 'https://www.instagram.com/wtaaaa_1/'
 
 const Portfolio = () => {
   const data = [
