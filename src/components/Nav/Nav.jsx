@@ -7,49 +7,51 @@ import { AiOutlineBook } from 'react-icons/ai'
 import { MdHomeRepairService, MdOutlineContacts } from 'react-icons/md'
 
 const Nav = () => {
-  const [activeNav, setActiveNav] = useState('#')
+  const [activeNav, setActiveNav] = useState('#home')
 
   return (
     <nav className="nav">
-      <a 
-        href="#home" 
-        onClick={() => setActiveNav('#home')} 
-        className={activeNav === '#' ? 'active' : ''}
+
+      <a
+        href="#home"
+        onClick={() => setActiveNav('#home')}
+        className={activeNav === '#home' ? 'active' : ''}
       >
         <AiFillHome />
       </a>
 
-      <a 
-        href="#about" 
-        onClick={() => setActiveNav('#about')} 
+      <a
+        href="#about"
+        onClick={() => setActiveNav('#about')}
         className={activeNav === '#about' ? 'active' : ''}
       >
         <BiSolidUser />
       </a>
 
-      <a 
-        href="#experiencia" 
-        onClick={() => setActiveNav('#experiencia')} 
+      <a
+        href="#experiencia"
+        onClick={() => setActiveNav('#experiencia')}
         className={activeNav === '#experiencia' ? 'active' : ''}
       >
         <AiOutlineBook />
       </a>
 
-      <a 
-        href="#servicos" 
-        onClick={() => setActiveNav('#servicos')} 
+      <a
+        href="#servicos"
+        onClick={() => setActiveNav('#servicos')}
         className={activeNav === '#servicos' ? 'active' : ''}
       >
         <MdHomeRepairService />
       </a>
 
-      <a 
-        href="#contato" 
-        onClick={() => setActiveNav('#contato')} 
+      <a
+        href="#contato"
+        onClick={() => setActiveNav('#contato')}
         className={activeNav === '#contato' ? 'active' : ''}
       >
         <MdOutlineContacts />
       </a>
+
     </nav>
   )
 }
