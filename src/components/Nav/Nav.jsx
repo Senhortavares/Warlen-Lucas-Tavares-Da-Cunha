@@ -13,7 +13,7 @@ const Nav = () => {
     <nav className="nav">
       <a 
         href="#home" 
-        onClick={() => setActiveNav('#')} 
+        onClick={() => setActiveNav('#home')} 
         className={activeNav === '#' ? 'active' : ''}
       >
         <AiFillHome />

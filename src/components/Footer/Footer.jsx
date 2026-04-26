@@ -9,12 +9,12 @@ const Footer = () => {
   return (
     <footer id="footer">
 
-      <a href="#" className="footer__logo">
+      <a href="#home" className="footer__logo">
         Warlen Tavares
       </a>
 
       <ul className="permalinks">
-        <li><a href="#homer">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#experiencia">Experiência</a></li>
         <li><a href="#servicos">Serviços</a></li>
